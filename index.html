@@ -1,132 +1,380 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Urjit Banerjee</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-<style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-</style>
-</head>
-<body class="bg-white">
-<!-- Header uses light cream background -->
-<header class="bg-amber-50 shadow-sm">
-<div class="container mx-auto px-6 py-4">
-<div class="flex items-center justify-between">
-<a href="index.html" class="text-3xl font-bold text-gray-800 hover:text-blue-600 transition-colors">Urjit Banerjee</a>
-<nav class="flex items-center space-x-8">
-<a class="text-gray-600 hover:text-blue-600 transition-colors cursor-pointer" href="about.html">About Me</a>
-<a class="text-blue-600" href="https://www.linkedin.com/in/urjit-banerjee-81210718b/" target="_blank" rel="noopener">
-<svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
-</svg>
-</a>
-</nav>
-</div>
-<p class="mt-2 text-left text-gray-600 text-base max-w-md ml-0 truncate" style="margin-left:0.25rem;">
-Assistant Product Manager
-</p>
-</div>
-</header>
-<main class="container mx-auto px-6 py-12">
-<div class="flex justify-center mb-12">
-<div class="flex space-x-4">
-<button class="tab-btn px-6 py-2 bg-blue-600 text-white rounded-full font-semibold shadow-md hover:bg-blue-700 transition-colors" data-tab="all">All</button>
-<button class="tab-btn px-6 py-2 bg-white text-gray-700 rounded-full font-semibold border border-gray-300 hover:bg-gray-100 transition-colors" data-tab="articles">Articles</button>
-<button class="tab-btn px-6 py-2 bg-white text-gray-700 rounded-full font-semibold border border-gray-300 hover:bg-gray-100 transition-colors" data-tab="videos">Videos</button>
-</div>
-</div>
-<div id="cards-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-<!-- Real Article Card -->
-<a href="article1.html" class="card bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 block" data-type="article">
-<img alt="From Curiosity to Craft: My Journey into Product Management" class="w-full h-48 object-cover bg-gray-200" src="article1-thumbnail.jpg"/>
-<div class="p-6">
-<h3 class="text-xl font-bold text-gray-800 mb-2">From Curiosity to Craft: My Journey into Product Management</h3>
-<p class="text-gray-600 text-sm line-clamp-4">When I started my career, I didn’t set out to become a Product Manager. In fact, I didn’t even know what the role really meant. But looking back now, I realize I’ve always been drawn to solving problems, asking "why," and trying to improve things—not just for the sake of process, but for the people behind the screens.</p>
-</div>
-</a>
-<!-- Real Video Card -->
-<a href="video1.html" class="card bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 block" data-type="video">
-  <img alt="YouTube Video 1" class="w-full h-48 object-cover bg-gray-200" src="https://img.youtube.com/vi/h3huwDADk1M/hqdefault.jpg"/>
-  <div class="p-6">
-    <h3 class="text-xl font-bold text-gray-800 mb-2"> Email Marketing for YTcash, OpeninAPP</h3>
-    <p class="text-gray-600 text-sm line-clamp-4">A small case for OpeninAPP. Here I describe how they can promote their feature using a email marketing campaign.</p>
-  </div>
-</a>
-</div>
-<!-- Articles tab content -->
-<div id="articles-tab-content" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-<a href="article1.html" class="card bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 block" data-type="article">
-<img alt="From Curiosity to Craft: My Journey into Product Management" class="w-full h-48 object-cover bg-gray-200" src="article1-thumbnail.jpg"/>
-<div class="p-6">
-<h3 class="text-xl font-bold text-gray-800 mb-2">From Curiosity to Craft: My Journey into Product Management</h3>
-<p class="text-gray-600 text-sm line-clamp-4">When I started my career, I didn’t set out to become a Product Manager. In fact, I didn’t even know what the role really meant. But looking back now, I realize I’ve always been drawn to solving problems, asking "why," and trying to improve things—not just for the sake of process, but for the people behind the screens.</p>
-</div>
-</a>
-</div>
-<!-- Videos tab content -->
-<div id="videos-tab-content" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-<a href="video1.html" class="card bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 block" data-type="video">
-  <img alt="YouTube Video 1" class="w-full h-48 object-cover bg-gray-200" src="https://img.youtube.com/vi/h3huwDADk1M/hqdefault.jpg"/>
-  <div class="p-6">
-    <h3 class="text-xl font-bold text-gray-800 mb-2">YouTube Video 1</h3>
-    <p class="text-gray-600 text-sm line-clamp-4">This is the description of the YouTube video. Replace this with the actual video description for a real implementation.</p>
-  </div>
-</a>
-</div>
-</main>
-<footer class="bg-white mt-12">
-<div class="container mx-auto px-6 py-6 text-center text-gray-500">
-<p>© 2024 Urjit Banerjee. All Rights Reserved.</p>
-<p class="text-xs text-gray-400 mt-1">Created using Cursor <span style='color:#e25555'>&hearts;</span></p>
-</div>
-</footer>
-<script>
-// Tab switching functionality
-const tabButtons = document.querySelectorAll('.tab-btn');
-const cardsGrid = document.getElementById('cards-grid');
-const articlesTabContent = document.getElementById('articles-tab-content');
-const videosTabContent = document.getElementById('videos-tab-content');
-
-function setActiveTab(tab) {
-  tabButtons.forEach(btn => {
-    if (btn.dataset.tab === tab) {
-      btn.classList.add('bg-blue-600', 'text-white', 'shadow-md');
-      btn.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-300');
-    } else {
-      btn.classList.remove('bg-blue-600', 'text-white', 'shadow-md');
-      btn.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Urjit Banerjee</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --accent: #2f5fd0;
+      --bg-soft: #f4f5f7;
+      --text-main: #1f2933;
+      --text-muted: #6b7280;
+      --card-bg: #ffffff;
+      --border-subtle: #e5e7eb;
+      --max-width: 1080px;
     }
-  });
-  if (tab === 'all') {
-    cardsGrid.classList.remove('hidden');
-    articlesTabContent.classList.add('hidden');
-    videosTabContent.classList.add('hidden');
-  } else if (tab === 'articles') {
-    cardsGrid.classList.add('hidden');
-    articlesTabContent.classList.remove('hidden');
-    videosTabContent.classList.add('hidden');
-  } else if (tab === 'videos') {
-    cardsGrid.classList.add('hidden');
-    articlesTabContent.classList.add('hidden');
-    videosTabContent.classList.remove('hidden');
-  } else {
-    cardsGrid.classList.add('hidden');
-    articlesTabContent.classList.add('hidden');
-    videosTabContent.classList.add('hidden');
-  }
-}
 
-tabButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    setActiveTab(btn.dataset.tab);
-  });
-});
-// Set default tab
-setActiveTab('all');
-</script>
-</body></html> 
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background:
+        radial-gradient(circle at 0% 0%, #eef2ff 0%, rgba(238, 242, 255, 0.0) 45%),
+        linear-gradient(180deg, #f7f9fc 0%, #f4f5f7 40%, #f4f5f7 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Sticky minimalist navigation */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: linear-gradient(120deg, #f8fafc 0%, #eef2ff 45%, #f5f7fb 100%);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(209, 213, 219, 0.6);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .nav {
+      display: flex;
+      gap: 20px;
+      font-size: 0.95rem;
+    }
+
+    .nav-link {
+      position: relative;
+      padding-bottom: 2px;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--text-main);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link--primary {
+      color: var(--accent);
+    }
+
+    /* Main layout */
+    .main {
+      flex: 1;
+      padding: 0 0 48px;
+    }
+
+    /* Hero section */
+    .hero {
+      padding-top: 44px;
+      padding-bottom: 24px;
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .profile-photo-wrapper {
+      flex-shrink: 0;
+    }
+
+    .profile-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.14);
+      border: 3px solid #ffffff;
+      background: #e5e7eb;
+      display: block;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .hero-title {
+      font-size: 2.1rem;
+      font-weight: 600;
+      margin: 0 0 8px;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 34rem;
+      margin: 0 0 10px;
+    }
+
+    .hero-story {
+      font-size: 0.98rem;
+      color: var(--text-main);
+      max-width: 40rem;
+      margin: 0 0 14px;
+    }
+
+    /* Journey CTA (text-style) */
+    .journey-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--accent);
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .journey-cta span {
+      transition: transform 0.2s ease;
+    }
+
+    .journey-cta:hover {
+      border-color: rgba(47, 95, 208, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .journey-cta:hover span:last-child {
+      transform: translateX(2px);
+    }
+
+    /* Background info cards */
+    .section-heading {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin: 0 0 12px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .info-card {
+      display: block;
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid rgba(229, 231, 235, 0.9);
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.03);
+      transition: box-shadow 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.10);
+      border-color: rgba(47, 95, 208, 0.18);
+    }
+
+    .info-card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 6px;
+    }
+
+    .info-card-text {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--border-subtle);
+      background: #ffffff;
+    }
+
+    .footer-inner {
+      padding: 16px 0;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-text {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        row-gap: 6px;
+      }
+
+      .hero {
+        padding-top: 44px;
+        padding-bottom: 24px;
+      }
+
+      .hero-title {
+        font-size: 1.6rem;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-photo {
+        width: 160px;
+        height: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Sticky minimalist navigation -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="logo">Urjit Banerjee</div>
+        <nav class="nav">
+          <a href="case-studies.html" class="nav-link">Case Studies</a>
+          <a href="articles.html" class="nav-link">Articles</a>
+          <a href="journey.html" class="nav-link nav-link--primary">Journey</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="https://www.linkedin.com/in/urjit-banerjee-81210718b/" class="nav-link" target="_blank" rel="noopener">
+            LinkedIn
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <!-- Hero: story-based about section -->
+        <section class="hero">
+          <div class="hero-inner">
+            <div class="profile-photo-wrapper">
+              <img src="Profile.jpg" alt="Portrait of Urjit Banerjee" class="profile-photo" />
+            </div>
+            <div class="hero-text">
+              <div class="hero-eyebrow">Assistant Product Manager</div>
+              <h1 class="hero-title">Urjit Banerjee</h1>
+              <p class="hero-subtitle">
+                I help teams turn ambiguous customer problems into focused, testable product bets that quietly move the right numbers.
+              </p>
+              <p class="hero-story">
+                I didn’t start my career with “product management” in mind—I started with curiosity. Over time, that habit of asking “why” pulled me closer to customers and cross‑functional teams, where I now focus on shaping clear, measurable product decisions.
+              </p>
+              <a href="journey.html" class="journey-cta">
+                <span>Explore My Journey</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Background information cards -->
+        <section aria-labelledby="background-section">
+          <h2 id="background-section" class="section-heading">Background at a glance</h2>
+          <div class="cards-grid">
+            <a href="about.html#education" class="info-card">
+              <h3 class="info-card-title">Education</h3>
+              <p class="info-card-text">
+                A foundation in business and technology that helps me translate between user needs, product strategy, and delivery constraints.
+              </p>
+            </a>
+
+            <a href="about.html#experience" class="info-card">
+              <h3 class="info-card-title">Experience</h3>
+              <p class="info-card-text">
+                End‑to‑end product work across discovery, experimentation, and launch—partnering closely with engineering, design, and marketing.
+              </p>
+            </a>
+
+            <a href="about.html#interests" class="info-card">
+              <h3 class="info-card-title">Interests</h3>
+              <p class="info-card-text">
+                Curious about user psychology, onboarding flows, and how small product tweaks compound into meaningful business outcomes.
+              </p>
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>© 2024 Urjit Banerjee. All rights reserved.</div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
