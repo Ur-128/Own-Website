@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Case Studies</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Case Studies</h1>
+
+<p>Here I break down product problems, frameworks, and real-world product thinking.</p>
+
+<div class="case-grid">
+
+<div class="case-card">
+<h2>Uber Rider Drop Investigation</h2>
+<p>Diagnosing a sudden 12% weekly drop in riders in a single city.</p>
+<a href="#">Read Case Study →</a>
+</div>
+
+</div>
+
+</body>
+</html>

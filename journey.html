@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Journey into Product Management – Urjit Banerjee</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --accent: #2f5fd0;
+      --bg-soft: #f4f5f7;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --border-subtle: #e5e7eb;
+      --max-width: 760px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background:
+        radial-gradient(circle at 0% 0%, #eef2ff 0%, rgba(238, 242, 255, 0.0) 45%),
+        linear-gradient(180deg, #f7f9fc 0%, #f4f5f7 40%, #f4f5f7 100%);
+      color: var(--text-main);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .shell {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header matches home */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: linear-gradient(120deg, #f8fafc 0%, #eef2ff 45%, #f5f7fb 100%);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(209, 213, 219, 0.6);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .nav {
+      display: flex;
+      gap: 20px;
+      font-size: 0.95rem;
+    }
+
+    .nav-link {
+      position: relative;
+      padding-bottom: 2px;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--text-main);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link--primary {
+      color: var(--accent);
+    }
+
+    /* Main article layout */
+    .main {
+      flex: 1;
+      padding: 32px 0 48px;
+    }
+
+    .article-wrapper {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 16px;
+      border: 1px solid rgba(229, 231, 235, 0.8);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06);
+      padding: 28px 26px 28px;
+    }
+
+    .article-eyebrow {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .article-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin: 0 0 6px;
+    }
+
+    .article-subtitle {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      margin: 0 0 18px;
+    }
+
+    .article-meta {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #9ca3af;
+      margin-bottom: 18px;
+    }
+
+    .article-body h2 {
+      font-size: 1.07rem;
+      font-weight: 600;
+      margin: 22px 0 8px;
+    }
+
+    .article-body p {
+      margin: 0 0 12px;
+      font-size: 0.97rem;
+      color: #374151;
+    }
+
+    .article-body ul {
+      padding-left: 1.15rem;
+      margin: 0 0 14px;
+    }
+
+    .article-body li {
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+
+    .article-divider {
+      border: 0;
+      border-top: 1px solid rgba(229, 231, 235, 0.9);
+      margin: 18px 0 16px;
+    }
+
+    .article-footer-note {
+      font-size: 0.86rem;
+      color: #6b7280;
+      margin-top: 10px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      color: var(--accent);
+      margin-top: 18px;
+    }
+
+    .back-link span:last-child {
+      transform: translateX(0);
+      transition: transform 0.15s ease;
+    }
+
+    .back-link:hover span:last-child {
+      transform: translateX(-2px);
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--border-subtle);
+      background: #ffffff;
+    }
+
+    .footer-inner {
+      padding: 14px 20px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    @media (max-width: 720px) {
+      .header-inner {
+        padding-inline: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        row-gap: 6px;
+      }
+
+      .article-wrapper {
+        border-radius: 12px;
+        padding: 22px 18px 22px;
+      }
+
+      .article-title {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="logo">Urjit Banerjee</a>
+        <nav class="nav">
+          <a href="case-studies.html" class="nav-link">Case Studies</a>
+          <a href="articles.html" class="nav-link">Articles</a>
+          <a href="journey.html" class="nav-link nav-link--primary">Journey</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="https://www.linkedin.com/in/urjit-banerjee-81210718b/" class="nav-link" target="_blank" rel="noopener">
+            LinkedIn
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="shell">
+        <article class="article-wrapper">
+          <div class="article-eyebrow">Journey</div>
+          <h1 class="article-title">From Economics to Product Management: My Journey into My First PM Role</h1>
+          <p class="article-subtitle">
+            How curiosity about business, a career pause during COVID, and a product management bootcamp helped me discover a career in building products.
+          </p>
+          <div class="article-meta">PERSONAL STORY · CAREER TRANSITION</div>
+
+          <div class="article-body">
+            <h2>Introduction</h2>
+            <p>
+              Breaking into product management is rarely a straight path. Many people enter the field from engineering, consulting, or business backgrounds.
+              My journey into product management came from a slightly different direction — economics and data analysis.
+            </p>
+            <p>
+              In this article, I want to share how I discovered product management, how I transitioned into my first product role, and the key lessons I learned along the way.
+            </p>
+
+            <hr class="article-divider" />
+
+            <h2>Studying Economics and My Interest in Business</h2>
+            <p>
+              I graduated with a degree in Economics, a subject that fascinated me because it explores money, markets, incentives, and business systems.
+            </p>
+            <p>
+              In India, graduates in Economics and Statistics often begin their careers as data analysts. While that path was open to me, I was more interested in working closer to business execution and decision-making, rather than focusing purely on analytical tasks.
+            </p>
+            <p>
+              I wanted to be involved in building and improving products, not just analyzing data about them.
+            </p>
+
+            <hr class="article-divider" />
+
+            <h2>My First Job: Catastrophic Risk Analysis</h2>
+            <p>
+              My first job came during the COVID-19 pandemic, where I worked in catastrophic risk analysis.
+              The role involved working with data and understanding large-scale risk models. Although the domain was intellectually interesting, the nature of the work was still heavily focused on data analysis.
+            </p>
+            <p>
+              Unfortunately, due to COVID and some health issues, I was unable to continue in the role for long and had to take a break from work to recover.
+              That period of pause unexpectedly became a time for reflection about my career direction.
+            </p>
+
+            <hr class="article-divider" />
+
+            <h2>Discovering Product Management</h2>
+            <p>
+              During this phase, a cousin suggested that I explore product management as a career option. At that time, I had very little understanding of what product managers actually did.
+              However, he believed the role might align well with my personality — someone interested in business strategy, problem-solving, and execution.
+            </p>
+            <p>
+              Curious to explore further, I enrolled in a product management bootcamp at Upraised, which was a well-known program at the time.
+              Very quickly, I realized that I genuinely enjoyed learning about product thinking. It felt like I had finally discovered a discipline that combined business, technology, and user understanding.
+            </p>
+            <p>
+              In many ways, the frameworks and structured thinking reminded me of what a traditional MBA might teach — although choosing not to pursue an MBA is a story for another day.
+            </p>
+
+            <hr class="article-divider" />
+
+            <h2>Learning Product Thinking at Upraised</h2>
+            <p>
+              The bootcamp helped me develop a structured approach to solving business problems, which is one of the core skills required in product management.
+            </p>
+            <p>Some of the key things I learned included:</p>
+            <ul>
+              <li>Diagnosing product and business problems</li>
+              <li>Working through industry-relevant product case studies</li>
+              <li>Learning practical product frameworks</li>
+              <li>Writing a Product Requirement Document (PRD) with guidance from an experienced product mentor</li>
+            </ul>
+            <p>
+              This experience helped me build a foundation in product thinking, which later proved extremely useful in real-world situations.
+            </p>
+
+            <hr class="article-divider" />
+
+            <h2>Landing My First Product Manager Role</h2>
+            <p>
+              Shortly after completing the program, I landed my current role as a Product Manager.
+              Interestingly, I joined the company as the first and only product manager in the organization at the time.
+              This meant I had to take on a wide range of responsibilities from day one.
+            </p>
+            <p>Some of the work I handled included:</p>
+            <ul>
+              <li>Setting up Mixpanel analytics events</li>
+              <li>Writing Product Requirement Documents (PRDs)</li>
+              <li>Conducting user interviews</li>
+              <li>Introducing structured product development processes</li>
+            </ul>
+            <p>
+              What made the experience particularly unique was that many of these product practices were being introduced for the first time within the organization.
+            </p>
+
+            <hr class="article-divider" />
+
+            <h2>What Being the First Product Manager Taught Me</h2>
+            <p>
+              Being the first product hire gave me immense hands-on exposure.
+              Instead of working on a narrow slice of the product lifecycle, I had the opportunity to contribute across almost every stage — from user research and product discovery to analytics and execution.
+            </p>
+            <p>
+              This experience helped me develop:
+            </p>
+            <ul>
+              <li>Strong product intuition</li>
+              <li>Confidence in solving real user problems</li>
+              <li>A practical understanding of how products evolve within organizations</li>
+            </ul>
+
+            <hr class="article-divider" />
+
+            <h2>Final Thoughts</h2>
+            <p>
+              Looking back, my journey into product management was unexpected but deeply rewarding.
+              Coming from an economics background and initially working in data analysis, I did not originally imagine myself becoming a product manager.
+              But exploring the field, investing in learning, and gaining hands-on experience helped me build a career in product.
+            </p>
+            <p>
+              For anyone considering a transition into product management, my biggest advice would be this:
+              develop structured thinking, curiosity about users, and the ability to solve real business problems.
+              The path may not always be linear, but the learning journey itself can be incredibly fulfilling.
+            </p>
+          </div>
+
+          <p class="article-footer-note">
+            This story connects to the work I do today as an Assistant Product Manager, and it’s what sits behind the projects and case studies you’ll find on this site.
+          </p>
+
+          <a href="index.html" class="back-link">
+            <span>←</span>
+            <span>Back to home</span>
+          </a>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>© 2024 Urjit Banerjee. All rights reserved.</div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
+
