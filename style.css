@@ -29,7 +29,7 @@ header {
 .header-content {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 14px 20px;
+  padding: 16px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -201,12 +201,49 @@ footer {
   .header-content {
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    gap: 6px;
+    padding: 10px 16px 10px;
+  }
+
+  .header-content h1 {
+    font-size: 1.2rem;
   }
 
   nav ul {
-    flex-wrap: wrap;
-    row-gap: 6px;
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    column-gap: 12px;
+    font-size: 0.85rem;
+  }
+
+  main {
+    margin: 24px auto 32px;
+    padding: 0 16px;
+  }
+
+  .tiles {
+    gap: 14px;
+    margin-top: 16px;
+  }
+
+  .tile {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .tile img {
+    height: 120px;
+    margin-bottom: 8px;
+  }
+
+  .tile h3 {
+    font-size: 0.96rem;
+    margin-bottom: 4px;
+  }
+
+  .tile p {
+    font-size: 0.85rem;
   }
 }
 

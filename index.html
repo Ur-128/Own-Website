@@ -46,7 +46,7 @@
       width: 100%;
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 24px;
     }
 
     /* Sticky minimalist navigation */
@@ -281,10 +281,19 @@
       flex: 1;
     }
 
+    .work-item-top-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
     .work-item-title {
       font-size: 0.98rem;
       font-weight: 600;
       margin: 0 0 4px;
+      flex: 1;
+      min-width: 0;
     }
 
     .work-item-text {
@@ -389,21 +398,33 @@
       .header-inner {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
+        gap: 6px;
+        padding: 10px 0 10px;
+      }
+
+      .logo {
+        font-size: 1.2rem;
       }
 
       .nav {
-        flex-wrap: wrap;
-        row-gap: 6px;
+        width: 100%;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+        gap: 12px;
+        font-size: 0.85rem;
       }
 
       .hero {
-        padding-top: 44px;
-        padding-bottom: 24px;
+        padding-top: 36px;
+        padding-bottom: 20px;
       }
 
       .hero-title {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
+      }
+
+      .hero-subtitle {
+        font-size: 0.95rem;
       }
 
       .cards-grid {
@@ -411,16 +432,29 @@
       }
 
       .profile-photo {
-        width: 160px;
-        height: 160px;
+        width: 150px;
+        height: 150px;
       }
 
       .work-section {
-        padding: 16px 14px 18px;
+        padding: 14px 12px 16px;
       }
 
       .work-item {
         align-items: flex-start;
+        padding: 12px 12px;
+      }
+
+      .work-item-top-row {
+        gap: 6px;
+      }
+
+      .work-item-title {
+        font-size: 0.95rem;
+      }
+
+      .work-item-cta {
+        font-size: 0.82rem;
       }
     }
   </style>
@@ -474,46 +508,56 @@
             <a href="improving-user-onboarding.html" class="work-item work-item--blue">
               <div class="work-item-icon">U</div>
               <div class="work-item-main">
-                <h3 class="work-item-title">Improving User Onboarding</h3>
+                <div class="work-item-top-row">
+                  <h3 class="work-item-title">Improving User Onboarding</h3>
+                  <span class="work-item-cta">Read the story →</span>
+                </div>
                 <p class="work-item-text">Activation improvements in early user journey.</p>
               </div>
-              <span class="work-item-cta">Read the story →</span>
             </a>
 
             <a href="ai-roleplay-learning-feature.html" class="work-item work-item--teal">
               <div class="work-item-icon work-item-icon--teal">AI</div>
               <div class="work-item-main">
-                <h3 class="work-item-title">AI Roleplay Learning Feature</h3>
+                <div class="work-item-top-row">
+                  <h3 class="work-item-title">AI Roleplay Learning Feature</h3>
+                  <span class="work-item-cta">Read the story →</span>
+                </div>
                 <p class="work-item-text">Helping users practice communication with AI simulations.</p>
               </div>
-              <span class="work-item-cta">Read the story →</span>
             </a>
 
             <a href="content-learning-system.html" class="work-item work-item--amber">
               <div class="work-item-icon work-item-icon--amber">C</div>
               <div class="work-item-main">
-                <h3 class="work-item-title">Content Learning System</h3>
+                <div class="work-item-top-row">
+                  <h3 class="work-item-title">Content Learning System</h3>
+                  <span class="work-item-cta">Read the story →</span>
+                </div>
                 <p class="work-item-text">Structuring learning journeys using video + PDF modules.</p>
               </div>
-              <span class="work-item-cta">Read the story →</span>
             </a>
 
             <a href="experimentation-dashboard.html" class="work-item work-item--slate">
               <div class="work-item-icon work-item-icon--slate">E</div>
               <div class="work-item-main">
-                <h3 class="work-item-title">Experimentation Dashboard</h3>
+                <div class="work-item-top-row">
+                  <h3 class="work-item-title">Experimentation Dashboard</h3>
+                  <span class="work-item-cta">Read the story →</span>
+                </div>
                 <p class="work-item-text">Internal dashboard to monitor growth experiments.</p>
               </div>
-              <span class="work-item-cta">Read the story →</span>
             </a>
 
             <a href="revamping-payment-upgrades.html" class="work-item work-item--gold">
               <div class="work-item-icon work-item-icon--gold">S</div>
               <div class="work-item-main">
-                <h3 class="work-item-title">Revamping Payment Upgrades</h3>
+                <div class="work-item-top-row">
+                  <h3 class="work-item-title">Revamping Payment Upgrades</h3>
+                  <span class="work-item-cta">Read the story →</span>
+                </div>
                 <p class="work-item-text">Optimizing upgrade flows to improve conversion and revenue.</p>
               </div>
-              <span class="work-item-cta">Read the story →</span>
             </a>
           </div>
         </section>
