@@ -67,6 +67,18 @@
       margin: 0 auto;
     }
 
+    /* Shared navbar component uses .container.header-inner */
+    .site-header .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 24px;
+    }
+
+    .site-header .container.header-inner {
+      padding: 14px 24px;
+    }
+
     .logo {
       font-size: 1.3rem;
       font-weight: 600;
@@ -227,6 +239,10 @@
         gap: 6px;
       }
 
+      .site-header .container.header-inner {
+        padding: 10px 18px 10px;
+      }
+
       .logo {
         font-size: 1.15rem;
       }
@@ -252,19 +268,7 @@
 </head>
 <body>
   <div class="page-wrapper">
-    <header class="site-header">
-      <div class="header-inner">
-        <a href="index.html" class="logo">Urjit Banerjee</a>
-        <nav class="nav">
-          <a href="case-studies.html" class="nav-link">Blogs</a>
-          <a href="journey.html" class="nav-link nav-link--primary">Journey</a>
-          <a href="contact.html" class="nav-link">Contact</a>
-          <a href="https://www.linkedin.com/in/urjit-banerjee-81210718b/" class="nav-link" target="_blank" rel="noopener">
-            LinkedIn
-          </a>
-        </nav>
-      </div>
-    </header>
+    <div id="navbar-placeholder"></div>
 
     <main class="main">
       <div class="shell">
@@ -411,6 +415,7 @@
       </div>
     </footer>
   </div>
+  <script src="js/load-navbar.js"></script>
 </body>
 </html>
 

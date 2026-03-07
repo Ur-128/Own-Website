@@ -167,6 +167,14 @@
       margin: 0 0 10px;
     }
 
+    .hero-subtitle--mobile {
+      display: none;
+    }
+
+    .journey-cta-text--mobile {
+      display: none;
+    }
+
     /* Journey CTA (text-style) */
     .journey-cta {
       display: inline-flex;
@@ -218,6 +226,10 @@
       margin: 2px 0 16px;
     }
 
+    .work-section-subtitle--mobile {
+      display: none;
+    }
+
     .work-list {
       display: flex;
       flex-direction: column;
@@ -233,7 +245,7 @@
       padding: 16px 18px;
       border-radius: 12px;
       background: var(--card-bg);
-      border: 1px solid rgba(229, 231, 235, 0.9);
+      border: 1px solid rgba(203, 213, 225, 0.85);
       box-shadow: 0 4px 10px rgba(15, 23, 42, 0.03);
       transition:
         box-shadow 0.18s ease,
@@ -302,11 +314,9 @@
       color: var(--text-muted);
     }
 
-    .work-item-cta {
-      font-size: 0.9rem;
-      color: var(--accent);
-      font-weight: 500;
-      white-space: nowrap;
+    /* Hide mobile-only description on desktop. Show/hide is toggled in @media (max-width: 720px) below. */
+    .work-item-text--mobile {
+      display: none;
     }
 
     /* Per-tile hover accents matching icon colors */
@@ -399,7 +409,7 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 6px;
-        padding: 10px 0 10px;
+        padding: 10px 18px 10px;
       }
 
       .logo {
@@ -427,6 +437,22 @@
         font-size: 0.95rem;
       }
 
+      .hero-subtitle--desktop {
+        display: none;
+      }
+
+      .hero-subtitle--mobile {
+        display: block;
+      }
+
+      .journey-cta-text--desktop {
+        display: none;
+      }
+
+      .journey-cta-text--mobile {
+        display: inline;
+      }
+
       .cards-grid {
         grid-template-columns: 1fr;
       }
@@ -437,44 +463,81 @@
       }
 
       .work-section {
-        padding: 14px 12px 16px;
+        padding: 10px 12px 12px;
+      }
+
+      .work-section-subtitle {
+        margin-bottom: 10px;
+      }
+
+      .work-section-subtitle--desktop {
+        display: none;
+      }
+
+      .work-section-subtitle--mobile {
+        display: block;
+      }
+
+      .work-list {
+        gap: 8px;
+        margin-top: 2px;
       }
 
       .work-item {
-        align-items: flex-start;
-        padding: 12px 12px;
+        align-items: center;
+        padding: 8px 12px;
+        gap: 10px;
+      }
+
+      .work-item-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.95rem;
+        flex-shrink: 0;
+      }
+
+      /* Mobile card layout: Title (full width) → Description. */
+      .work-item-main {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        overflow: hidden;
       }
 
       .work-item-top-row {
-        gap: 6px;
+        display: contents;
       }
 
       .work-item-title {
         font-size: 0.95rem;
+        order: 1;
+        margin-bottom: 0;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
 
-      .work-item-cta {
-        font-size: 0.82rem;
+      .work-item-text--desktop {
+        display: none;
+      }
+
+      .work-item-text--mobile {
+        display: block;
+        order: 2;
+        margin-top: 2px;
+        font-size: 0.875rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        min-width: 0;
       }
     }
   </style>
 </head>
 <body>
   <div class="page-wrapper">
-    <!-- Sticky minimalist navigation -->
-    <header class="site-header">
-      <div class="container header-inner">
-        <a href="index.html" class="logo">Urjit Banerjee</a>
-        <nav class="nav">
-          <a href="case-studies.html" class="nav-link">Blogs</a>
-          <a href="journey.html" class="nav-link nav-link--primary">Journey</a>
-          <a href="contact.html" class="nav-link">Contact</a>
-          <a href="https://www.linkedin.com/in/urjit-banerjee-81210718b/" class="nav-link" target="_blank" rel="noopener">
-            LinkedIn
-          </a>
-        </nav>
-      </div>
-    </header>
+    <div id="navbar-placeholder"></div>
 
     <main class="main">
       <div class="container">
@@ -487,11 +550,17 @@
             <div class="hero-text">
               <div class="hero-eyebrow">Assistant Product Manager</div>
               <h1 class="hero-title">Urjit Banerjee</h1>
-              <p class="hero-subtitle">
+              <!-- Hero subtitle: edit desktop copy below; mobile copy is in the next line (short, ~2 lines on phone). -->
+              <p class="hero-subtitle hero-subtitle--desktop">
                 I help teams turn ambiguous customer problems into focused, testable product bets that quietly move the right numbers.
               </p>
+              <p class="hero-subtitle hero-subtitle--mobile">
+                I turn ambiguous customer problems into measurable product bets.
+              </p>
+              <!-- Journey CTA: edit desktop text in first span; mobile text in second span. -->
               <a href="journey.html" class="journey-cta">
-                <span>See how I moved into product management</span>
+                <span class="journey-cta-text journey-cta-text--desktop">See how I moved into product management</span>
+                <span class="journey-cta-text journey-cta-text--mobile">See my journey</span>
                 <span>→</span>
               </a>
             </div>
@@ -501,18 +570,26 @@
         <!-- Selected product work -->
         <section class="work-section" aria-labelledby="work-section">
           <h2 id="work-section" class="section-heading">Selected Product Work</h2>
-          <p class="work-section-subtitle">
-            A few product problems I&apos;ve worked on and how I approached them.
+          <!-- Section description: edit desktop copy below (richer); mobile copy in next line (shorter). -->
+          <p class="work-section-subtitle work-section-subtitle--desktop">
+            A few product problems I&apos;ve tackled — from user activation to product experiments — and the thinking behind the solutions.
           </p>
+          <p class="work-section-subtitle work-section-subtitle--mobile">
+            Product problems I&apos;ve tackled and how I approached them.
+          </p>
+          <!-- Selected product work cards: each card has two descriptions.
+         - work-item-text--desktop: shown on desktop only (edit for full description).
+         - work-item-text--mobile: shown on mobile only (keep short, ~5–7 words). -->
           <div class="work-list">
             <a href="improving-user-onboarding.html" class="work-item work-item--blue">
               <div class="work-item-icon">U</div>
               <div class="work-item-main">
                 <div class="work-item-top-row">
                   <h3 class="work-item-title">Improving User Onboarding</h3>
-                  <span class="work-item-cta">Read the story →</span>
                 </div>
-                <p class="work-item-text">Activation improvements in early user journey.</p>
+                <!-- Desktop description (full). Mobile description below (~5–7 words). -->
+                <p class="work-item-text work-item-text--desktop">Activation improvements in early user journey.</p>
+                <p class="work-item-text work-item-text--mobile">Early user journey activation.</p>
               </div>
             </a>
 
@@ -521,9 +598,10 @@
               <div class="work-item-main">
                 <div class="work-item-top-row">
                   <h3 class="work-item-title">AI Roleplay Learning Feature</h3>
-                  <span class="work-item-cta">Read the story →</span>
                 </div>
-                <p class="work-item-text">Helping users practice communication with AI simulations.</p>
+                <!-- Desktop description (full). Mobile description below (~5–7 words). -->
+                <p class="work-item-text work-item-text--desktop">Helping users practice communication with AI simulations.</p>
+                <p class="work-item-text work-item-text--mobile">AI-powered communication practice.</p>
               </div>
             </a>
 
@@ -532,9 +610,10 @@
               <div class="work-item-main">
                 <div class="work-item-top-row">
                   <h3 class="work-item-title">Content Learning System</h3>
-                  <span class="work-item-cta">Read the story →</span>
                 </div>
-                <p class="work-item-text">Structuring learning journeys using video + PDF modules.</p>
+                <!-- Desktop description (full). Mobile description below (~5–7 words). -->
+                <p class="work-item-text work-item-text--desktop">Structuring learning journeys using video + PDF modules.</p>
+                <p class="work-item-text work-item-text--mobile">Video and PDF learning modules.</p>
               </div>
             </a>
 
@@ -543,9 +622,10 @@
               <div class="work-item-main">
                 <div class="work-item-top-row">
                   <h3 class="work-item-title">Experimentation Dashboard</h3>
-                  <span class="work-item-cta">Read the story →</span>
                 </div>
-                <p class="work-item-text">Internal dashboard to monitor growth experiments.</p>
+                <!-- Desktop description (full). Mobile description below (~5–7 words). -->
+                <p class="work-item-text work-item-text--desktop">Internal dashboard to monitor growth experiments.</p>
+                <p class="work-item-text work-item-text--mobile">Dashboard for growth experiments.</p>
               </div>
             </a>
 
@@ -554,9 +634,10 @@
               <div class="work-item-main">
                 <div class="work-item-top-row">
                   <h3 class="work-item-title">Revamping Payment Upgrades</h3>
-                  <span class="work-item-cta">Read the story →</span>
                 </div>
-                <p class="work-item-text">Optimizing upgrade flows to improve conversion and revenue.</p>
+                <!-- Desktop description (full). Mobile description below (~5–7 words). -->
+                <p class="work-item-text work-item-text--desktop">Optimizing upgrade flows to improve conversion and revenue.</p>
+                <p class="work-item-text work-item-text--mobile">Upgrade flows and conversion optimization.</p>
               </div>
             </a>
           </div>
@@ -570,5 +651,6 @@
       </div>
     </footer>
   </div>
+  <script src="js/load-navbar.js"></script>
 </body>
 </html>
